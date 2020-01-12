@@ -1,0 +1,8 @@
+{
+  "verbose": "Affiche des informations sur ce que le programme est en train de faire.",
+  "debug": "Affiche des information pratique de debug dans le terminal.",
+  "serve": "Sert un dossier de fichiers Markdown sous la forme d'une presentation web.",
+  "port": "Le port sur votre machine locale pour accéder à la présentation web.",
+  "make": "Transforme un dossier de fichiers Markdown en une presentation autonome.",
+  "help": "Affiche les informations d'utilisation."
+}

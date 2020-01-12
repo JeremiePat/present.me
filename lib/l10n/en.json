@@ -1,0 +1,8 @@
+{
+  "verbose": "Let the program telling about what it is doing.",
+  "debug": "Provide helpful debug information in the terminal.",
+  "serve": "Serve a folder of Markdown files as a web slidedeck.",
+  "port": "The port on the localhost machine to access the web slidedeck.",
+  "make": "Turn a folder of Markdown files into a slidedeck.",
+  "help": "Output usage information."
+}
