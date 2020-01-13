@@ -1,0 +1,181 @@
+<!doctype html>
+<html${ if(lang)} lang="$lang$"${ endif }${ if(dir) } dir="$dir$"${ endif }>
+<meta charset="utf-8">
+
+<title>${ if(title-prefix) }${ title-prefix } – ${ endif }${ pagetitle }</title>
+
+${ for(author-meta) }
+<meta name="author" content="${ author-meta }">
+${ endfor }
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="$revealjs-url$/css/reset.css">
+<link rel="stylesheet" href="$revealjs-url$/css/reveal.css">
+<style>
+	${ styles.html() }
+	.reveal .sourceCode {
+		width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+	}
+	.reveal .sourceCode pre {
+		margin: 0;
+		width: auto;
+	}
+</style>
+${ if(theme) }
+<link rel="stylesheet" href="$revealjs-url$/css/theme/${ theme }.css" id="theme"> -->
+${ endif }
+${ for(css) }
+<link rel="stylesheet" href="${ css }"/>
+${ endfor }
+
+<!-- Printing and PDF exports -->
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? '$revealjs-url$/css/print/pdf.css' : '$revealjs-url$/css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+<script src="$revealjs-url$/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+${ if(math) }
+	${ math }
+${ endif }
+
+${ for(header-includes) }
+  ${ header-includes }
+${ endfor }
+
+<body>
+${ for(include-before) }
+	${ include-before }
+${ endfor }
+
+<div class="reveal">
+	<div class="slides">
+		${ if(title) }
+		<section id="${ idprefix }title-slide"${ for(title-slide-attributes/pairs) } ${ it.key }="${ it.value }"${ endfor }>
+			<h1 class="title">${ title }</h1>
+			${ if(subtitle) }<p class="subtitle">${ subtitle }</p>${ endif }
+
+			${ for(author) }
+			<p class="author">${ author }</p>
+			${ endfor }
+
+			${ if(date) }<p class="date"><time datetime="${ date-meta }">${ date }</time></p>${ endif }
+		</section>
+		${ endif }
+
+		${ if(toc) }
+		<section id="${ idprefix }TOC">
+			${ table-of-contents }
+		</section>
+		${ endif }
+
+		${ body }
+	</div>
+</div>
+
+<script src="$revealjs-url$/js/reveal.js"></script>
+
+<script>
+
+	// More info https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		${ if(controls)                     }controls:                     ${ controls },${ endif }
+		${ if(controlsTutorial)             }controlsTutorial:             ${ controlsTutorial },${ endif }
+		${ if(controlsLayout)               }controlsLayout:               '${ controlsLayout }',${ endif }
+		${ if(controlsBackArrows)           }controlsBackArrows:           '${ controlsBackArrows }',${ endif }
+		${ if(progress)                     }progress:                     ${ progress },${ endif }
+		${ if(slideNumber)                  }slideNumber:                  ${ slideNumber },${ endif }
+		${ if(hash)                         }hash:                         ${ hash },${ endif }
+		${ if(history)                      }history:                      ${ history },${ endif }
+		${ if(keyboard)                     }keyboard:                     ${ keyboard },${ endif }
+		${ if(overview)                     }overview:                     ${ overview },${ endif }
+		${ if(center)                       }center:                       ${ center },${ endif }
+		${ if(touch)                        }touch:                        ${ touch },${ endif }
+		${ if(loop)                         }loop:                         ${ loop },${ endif }
+		${ if(rtl)                          }rtl:                          ${ rtl },${ endif }
+		${ if(navigationMode)               }navigationMode:               '${ navigationMode }',${ endif }
+		${ if(shuffle)                      }shuffle:                      ${ shuffle },${ endif }
+		${ if(fragments)                    }fragments:                    ${ fragments },${ endif }
+		${ if(fragmentInURL)                }fragmentInURL:                ${ fragmentInURL },${ endif }
+		${ if(embedded)                     }embedded:                     ${ embedded },${ endif }
+		${ if(help)                         }help:                         ${ help },${ endif }
+		${ if(showNotes)                    }showNotes:                    ${ showNotes },${ endif }
+		${ if(autoPlayMedia)                }autoPlayMedia:                ${ autoPlayMedia },${ endif }
+		${ if(preloadIframes)               }preloadIframes:               ${ preloadIframes },${ endif }
+		${ if(autoSlide)                    }autoSlide:                    ${ autoSlide },${ endif }
+		${ if(autoSlideStoppable)           }autoSlideStoppable:           ${ autoSlideStoppable },${ endif }
+		${ if(autoSlideMethod)              }autoSlideMethod:              ${ autoSlideMethod },${ endif }
+		${ if(defaultTiming)                }defaultTiming:                ${ defaultTiming },${ endif }
+		${ if(mouseWheel)                   }mouseWheel:                   ${ mouseWheel },${ endif }
+		${ if(hideInactiveCursor)           }hideInactiveCursor:           ${ hideInactiveCursor },${ endif }
+		${ if(hideCursorTime)               }hideCursorTime:               ${ hideCursorTime },${ endif }
+		${ if(hideAddressBar)               }hideAddressBar:               ${ hideAddressBar },${ endif }
+		${ if(previewLinks)                 }previewLinks:                 ${ previewLinks },${ endif }
+		${ if(transition)                   }transition:                   '${ transition }',${ endif }
+		${ if(transitionSpeed)              }transitionSpeed:              '${ transitionSpeed }',${ endif }
+		${ if(backgroundTransition)         }backgroundTransition:         '${ backgroundTransition }',${ endif }
+		${ if(viewDistance)                 }viewDistance:                 ${ viewDistance },${ endif }
+		${ if(parallaxBackgroundImage)      }parallaxBackgroundImage:      '${ parallaxBackgroundImage }',${ else }
+		${ if(background-image)             }parallaxBackgroundImage:      '${ background-image }',${ endif }${ endif }
+		${ if(parallaxBackgroundSize)       }parallaxBackgroundSize:       '${ parallaxBackgroundSize }',${ endif }
+		${ if(parallaxBackgroundHorizontal) }parallaxBackgroundHorizontal: ${ parallaxBackgroundHorizontal },${ endif }
+		${ if(parallaxBackgroundVertical)   }parallaxBackgroundVertical:   ${ parallaxBackgroundVertical },${ endif }
+
+		${ if(display)  }display:  ${ display },${ endif }
+		${ if(width)    }width:    ${ width },${ endif }
+		${ if(height)   }height:   ${ height },${ endif }
+		${ if(margin)   }margin:   ${ margin },${ endif }
+		${ if(minScale) }minScale: ${ minScale },${ endif }
+		${ if(maxScale) }maxScale: ${ maxScale },${ endif }
+		${ if(zoomKey)  }zoomKey:  '${ zoomKey }',${ endif }
+
+		$if(mathjax)$
+		math: {
+			mathjax: '${ mathjaxurl }',
+			config: 'TeX-AMS_HTML-full',
+			tex2jax: {
+				inlineMath: [['\\(','\\)']],
+				displayMath: [['\\[','\\]']],
+				balanceBraces: true,
+				processEscapes: false,
+				processRefs: true,
+				processEnvironments: true,
+				preview: 'TeX',
+				skipTags: ['script','noscript','style','textarea','pre','code'],
+				ignoreClass: 'tex2jax_ignore',
+				processClass: 'tex2jax_process'
+			},
+		},
+		$endif$
+
+		// More info https://github.com/hakimel/reveal.js#dependencies
+		dependencies: [
+			{ src: '$revealjs-url$/plugin/search/search.js', async: true },
+      { src: '$revealjs-url$/plugin/zoom-js/zoom.js', async: true },
+      ${ if(notes-server) }
+      { src: '$socketio-url$/socket.io.js', async: true },
+      { src: '$revealjs-url$/plugin/notes-server/client.js', async: true },
+      ${ endif }
+      ${ if(mathjax) }
+      { src: '$revealjs-url$/plugin/math/math.js', async: true },
+      ${ endif }
+			{ src: '$revealjs-url$/plugin/notes/notes.js', async: true }
+		]
+	});
+
+</script>
+
+</body>
+</html>

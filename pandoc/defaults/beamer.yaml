@@ -1,0 +1,6 @@
+from: markdown+emoji
+to: beamer # PDF sildes
+standalone: true
+self-contained: false
+
+highlight-style: zenburn
