@@ -1,7 +1,11 @@
 const { writeFile } = require(`fs`).promises
 const exec = require(`./lib/exec`)
-const log = require(`./lib/log`).logger({ verbose: true })
+const Logger = require(`./lib/log`)
 const _ = require(`./lib/l10n`)
+
+const log = new Logger({
+  verbose: Logger.VERBOSITY_TALKING
+})
 
 async function install () {
   const has = {}
