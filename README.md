@@ -15,9 +15,6 @@ The easiest way to install **present.me** is to use `npm`
 $ npm i https://github.com/JeremiePat/present.me.git -g
 ```
 
-> **NOTE:** _One important thing to know is that **present.me** depend on (Pandoc)[https://pandoc.org/] (with LaTex). If Pandoc isn't available on your system you'll have to install it. However, because Pandoc (and especially LaTeX) can be very tedious to install, we suggest that you install a [Docker client](https://docs.docker.com/install/) instead. If Docker is present on your machine we will install automatically [a Docker container with Pandoc](https://hub.docker.com/r/pandoc/latex) to handle all the dependences._
-
-
 ### With Docker
 
 _TBD_

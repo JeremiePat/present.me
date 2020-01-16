@@ -8,10 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "node ./install.js --debug",
-    "docker": "node ./install.js --debug",
-    "make": "node -r dotenv/config ./index.js make",
-    "serve": "node -r dotenv/config ./index.js serve"
+    "make": "node ./index.js make",
+    "serve": "node ./index.js serve"
   },
   "author": "Jérémie Patonnier <jeremie.patonnier@gmail.com>",
   "license": "ISC",
@@ -30,6 +28,7 @@
     "fs-extra": "^8.1.0",
     "koa": "^2.11.0",
     "koa-static": "^5.0.0",
+    "nunjucks": "^3.2.0",
     "reveal.js": "^3.8.0",
     "strip-ansi": "^6.0.0"
   }
