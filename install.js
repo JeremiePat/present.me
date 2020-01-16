@@ -28,7 +28,7 @@ async function install () {
   }
 
   if (process.env.PME_MAKE_MODE === `REMOTE`) {
-    await exec(`docker build --no-cache --rm -t pme ./pandoc.Dockerfile`, { debug: true })
+    await exec(`docker build --no-cache --rm -t pme -f ./pandoc.Dockerfile .`, { debug: true })
       .then(() => {
         log.info(_(`Docker image is ready`))
       }, () => {
