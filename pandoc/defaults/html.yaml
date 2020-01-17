@@ -1,4 +1,0 @@
-from: markdown+emoji
-to: html5
-standalone: true
-self-contained: false
