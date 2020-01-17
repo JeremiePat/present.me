@@ -1,13 +1,14 @@
 {
   "name": "present.me",
   "version": "0.0.0",
-  "description": "PresentME is a convinient tool to present anything",
+  "description": "Present.ME is a convinient tool to present anything",
   "main": "index.js",
   "bin": {
     "pme": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./lib",
     "make": "node ./index.js make",
     "serve": "node ./index.js serve"
   },
@@ -29,6 +30,7 @@
     "koa": "^2.11.0",
     "koa-static": "^5.0.0",
     "nunjucks": "^3.2.0",
+    "puppeteer": "^2.0.0",
     "reveal.js": "^3.8.0",
     "strip-ansi": "^6.0.0"
   }
