@@ -29,6 +29,6 @@
   "Symlink reveal.js": "Creation d'un lien symbolique vers reveal.js",
   "The filename extension for the output should be '%1', got '%2' instead": "L'extension du fichier pour la sortie doit être '%1' au lieu de '%2'",
   "The port on the local machine to access the web slidedeck.": "Le port sur votre machine locale pour accéder à la présentation web.",
-  "TO: %1": "VERS: %1",
+  "TO:   %1": "VERS:   %1",
   "Turn a folder of Markdown files into a slidedeck.": "Transforme un dossier de fichiers Markdown en une presentation autonome."
 }
