@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% if lang -%}
-<html lang="{{ lang }}" dir="dir">
+<html lang="{{ lang }}"{% if options.rtl %} dir="rtl"{% endif %}>
 {% endif -%}
 <meta charset="utf-8">
 <title>{{ title }}</title>
@@ -8,7 +8,7 @@
 {% if description -%}
 <meta name="description" content="{{ description }}">
 {% endif -%}
-{% for author in authors -%}
+{% for author in authors | toArray -%}
 <meta name="author" content="{{ author }}">
 {% endfor -%}
 
@@ -18,13 +18,17 @@
 
 <link rel="stylesheet" href="reveal.js/css/reset.css">
 <link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/{{ theme if theme else 'black' }}.css">
+{% if (theme) -%}
+<link rel="stylesheet" href="reveal.js/css/theme/{{ theme }}.css">
+{% endif -%}
 
+{% if (highlight) -%}
 <!-- Theme used for syntax highlighting of code -->
-<link rel="stylesheet" href="reveal.js/lib/css/{{ highlight if highlight else 'monokai' }}.css">
+<link rel="stylesheet" href="reveal.js/lib/css/{{ highlight }}.css">
+{% endif -%}
 
 {% for stylesheet in css -%}
-  <link rel="stylesheet" href="{{ stylesheet }}">
+  <link rel="stylesheet" href="theme/{{ stylesheet }}">
 {% endfor -%}
 
 <!-- Printing and PDF exports -->
@@ -50,59 +54,13 @@
 
 <script src="reveal.js/js/reveal.js"></script>
 <script>
-  // More info https://github.com/hakimel/reveal.js#configuration
+  {# More info https://github.com/hakimel/reveal.js#configuration -#}
   Reveal.initialize({
-    controls: {{                     opt.controls | default('true') }},
-    controlsTutorial: {{             opt.controlsTutorial | default('true') }},
-    controlsLayout: {{               opt.controlsLayout | default("'bottom-right'") }},
-    controlsBackArrows: {{           opt.controlsBackArrows | default("'faded'") }},
-    progress: {{                     opt.progress | default('true') }},
-    slideNumber: {{                  opt.slideNumber | default('false') }},
-    hash: {{                         opt.hash | default('true') }},
-    history: {{                      opt.history | default('false') }},
-    keyboard: {{                     opt.keyboard | default('true') }},
-    overview: {{                     opt.overview | default('true') }},
-    center: {{                       opt.center | default('true') }},
-    touch: {{                        opt.touch | default('true') }},
-    loop: {{                         opt.loop | default('false') }},
-    navigationMode: {{               opt.navigationMode | default("'linear'") }},
-    shuffle: {{                      opt.shuffle | default('false') }},
-    fragments: {{                    opt.fragments | default('true') }},
-    fragmentInURL: {{                opt.fragmentInURL | default('true') }},
-    embedded: {{                     opt.embedded | default('false') }},
-    help: {{                         opt.help | default('true') }},
-    showNotes: {{                    opt.showNotes | default('false') }},
-    autoPlayMedia: {{                opt.autoPlayMedia | default('null') }},
-    preloadIframes: {{               opt.preloadIframes | default('true') }},
-    autoSlide: {{                    opt.autoSlide | default('0') }},
-    autoSlideStoppable: {{           opt.autoSlideStoppable | default('true') }},
-    autoSlideMethod: {{              opt.autoSlideMethod | default('Reveal.navigateNext') }},
-    defaultTiming: {{                opt.defaultTiming | default('120') }},
-    totalTime: {{                    opt.totalTime | default('0') }},
-    minimumTimePerSlide: {{          opt.minimumTimePerSlide | default('0') }},
-    mouseWheel: {{                   opt.mouseWheel | default('false') }},
-    hideInactiveCursor: {{           opt.hideInactiveCursor | default('true') }},
-    hideCursorTime: {{               opt.hideCursorTime | default('5000') }},
-    hideAddressBar: {{               opt.hideAddressBar | default('true') }},
-    previewLinks: {{                 opt.previewLinks | default('false') }},
-    transition: {{                   opt.transition | default("'slide'") }},
-    transitionSpeed: {{              opt.transitionSpeed | default("'default'") }},
-    backgroundTransition: {{         opt.backgroundTransition | default("'fade'") }},
-    viewDistance: {{                 opt.viewDistance | default('3') }},
-    parallaxBackgroundImage: {{      opt.parallaxBackgroundImage | default("''") }},
-    parallaxBackgroundSize: {{       opt.parallaxBackgroundSize | default("''") }},
-    parallaxBackgroundHorizontal: {{ opt.parallaxBackgroundHorizontal | default('null') }},
-    parallaxBackgroundVertical: {{   opt.parallaxBackgroundVertical | default('null') }},
-    rtl: {{ dir == 'rtl' }},
+    {% for key, value in options -%}
+    {{ key }}: {{ value | opt(key) }},
+    {% endfor -%}
 
-    display: {{  opt.display  | default("'block'") }},
-    width: {{    opt.width    | default('960') }},
-    height: {{   opt.height   | default('700') }},
-    margin: {{   opt.margin   | default('0.1') }},
-    minScale: {{ opt.minScale | default('0.2') }},
-    maxScale: {{ opt.maxScale | default('1.5') }},
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
+    {# More info https://github.com/hakimel/reveal.js#dependencies -#}
     dependencies: [
       { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
       { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },

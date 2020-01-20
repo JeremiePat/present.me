@@ -4,7 +4,6 @@
   "Access your slides at: http://localhost:%1": "Accédez à votre présentation à l'adresse: http://localhost:%1",
   "Cleanup before exit...": "Nettoyage avant fermeture...",
   "Close headless browser": "Fermeture du navigateur headless",
-  "Copy source files:": "Copie des fichiers sources:",
   "Creating a %1 document out of '%2'": "Creation d'un document %1 depuis '%2'",
   "Creating file:": "Creation du fichier:",
   "Customization info available in:": "Les informations de personalisation sont disponibles dans:",
@@ -29,7 +28,9 @@
   "Setting up slidedeck...": "Préparation de la présentation...",
   "Start HTML server on any available port": "Demarrage du serveur HTML sur n'importe quel port disponible",
   "Symlink reveal.js": "Creation d'un lien symbolique vers reveal.js",
+  "Symlink source files:": "Creation de liens symboliques vers les fichiers sources:",
   "The filename extension for the output should be '%1', got '%2' instead": "L'extension du fichier pour la sortie doit être '%1' au lieu de '%2'",
+  "The path to a theme folder to customize the output.": "Le chemin vers un dossier de thème pour personaliser le rendu final.",
   "The port on the local machine to access the web slidedeck.": "Le port sur votre machine locale pour accéder à la présentation web.",
   "TO:   %1": "VERS:   %1",
   "Turn a folder of Markdown files into a slidedeck.": "Transforme un dossier de fichiers Markdown en une presentation autonome."

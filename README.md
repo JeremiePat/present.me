@@ -78,6 +78,7 @@ Where:
 |:---------|:------|
 | --format, -f | The expected output format. Default to `html/slides` |
 | --output, -o | An explicite path to the expected output file. Default to `<sourceFolder>/<folderName>.<formatExtension>` |
+| --theme, -t | An explicite path to a custom theme folder. Default to `<sourceFolder>/theme` |
 
 Currently supported format:
  - `html/slides` Slide deck in HTML using [reaveal.js](https://revealjs.com)
@@ -96,8 +97,48 @@ Where:
 
 | Options | Value |
 |:--------|:------|
-| --port  | The port on where to serve the slide deck on the local machine. By default a random available port on the machine will be assigned |
+| --port, -p  | The port on where to serve the slide deck on the local machine. By default a random available port on the machine will be assigned |
+| --theme, -t | An explicite path to a custom theme folder. Default to `<sourceFolder>/theme` |
 
 ## Customization
 
-_WIP_
+Presentations can be customized to fit your needs. To do that you can create a `theme` folder that will contain a YAML configuration file and some CSS files.
+
+By default, the `theme` folder is expected to be within your main folder alongside your markdown files. However, you can use an external theme folder by using the `--theme` option:
+
+```bash
+$ pme make --theme=/my/theme/folder
+```
+
+### Configuration
+
+The YAML configuration file let you customize many aspect of the presentation. See [`theme/config.yaml`](theme/config.yaml) for the whole list of options and the exact syntaxe.
+
+This include all the [reveal.js options](https://github.com/hakimel/reveal.js#configuration), the size of the document, the theme to apply, etc.
+
+The `theme/config.yaml` represents the default config apply to all presentation. Your own config file can be lighter as it will overwrite only what you set.
+
+### Styling
+
+You can create your own style for your presentations by simply creating css stylesheets at the root of the `theme` folder.
+
+Any stylesheet within a subfolder won't be loaded, except is you import them within any of the top level stylesheet with the `@import` rule.
+
+For the PDF output, as we are using chromium under the hood, you can use the `@media print` rule to define a specific style for the PDF different than for the HTML:
+
+```css
+/* This will apply to both HTML and PDF output */
+@import url('styles/common.css');
+
+/* This will apply to the HTML output (unless you try to print it) */
+@media screen {
+  @import url('styles/html.css');
+}
+
+/* This will apply to the PDF output */
+@media print {
+  @import url('styles/pdf.css')
+}
+```
+
+> **NOTE:** _If you are creating relative links to ressources into your stylesheets, all those ressources must be into the theme folder. If you are creating absolute links, always assume that your root folder is your source folder containing your theme folder named `theme`, even if you specified your theme folder through the `--theme` option._
