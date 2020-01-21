@@ -81,7 +81,7 @@ Where:
 | --theme, -t | An explicite path to a custom theme folder. Default to `<sourceFolder>/theme` |
 
 Currently supported format:
- - `html/slides` Slide deck in HTML using [reaveal.js](https://revealjs.com)
+ - `html/slides` Slide deck in HTML using [reveal.js](https://revealjs.com)
  - `pdf/slides` Slide deck in PDF format
 
 #### pme serve
