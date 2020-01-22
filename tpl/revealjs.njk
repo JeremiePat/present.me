@@ -43,11 +43,10 @@
 <div class="reveal">
   <div class="slides">
     {% for file in files -%}
-      <section data-markdown>
-        <textarea data-template>
-          {% include file %}
-        </textarea>
-      </section>
+      <section data-markdown="{{ file }}"
+       {%- if (markdown.separator) %} data-separator="{{ markdown.separator }}"{% endif %}
+       {%- if (markdown.vertical) %} data-separator-vertical="{{ markdown.vertical }}"{% endif %}
+       {%- if (markdown.notes) %} data-separator-notes="{{ markdown.notes }}"{% endif %}></section>
     {% endfor -%}
   </div>
 </div>

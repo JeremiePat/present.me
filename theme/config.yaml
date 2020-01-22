@@ -37,12 +37,22 @@ theme: simple # black/white/league/beige/sky/night/serif/simple/solarized
 # Feel free to pick one at https://github.com/highlightjs/highlight.js/tree/master/src/styles
 highlight: monokai # monokai/zenburn
 
+# reveal.js markdown separator rules for markdown files with multiple slides
+# inside.
+# Those value will be used to fill the `data-separator`,
+# `data-separator-vertical` and `data-separator-notes` attributes.
+# see: https://github.com/hakimel/reveal.js#external-markdown
+markdown:
+  separator: '^\r?\n---\r?\n$' # to fill data-markdown-separator
+  vertical: false # to fill data-separator-vertical
+  notes: '^notes?:' # to fill data-separator-notes
+
 # reveal.js configuration
 # see: https://github.com/hakimel/reveal.js#configuration for details
 # This is our own default overload
 options:
   # The display mode that will be used to show slides
-  # display: 'block'
+  # display: block
 
   # The "normal" size of the presentation, aspect ratio will be preserved
   # when the presentation is scaled to fit different resolutions.
@@ -64,11 +74,11 @@ options:
   # controlsTutorial: true
 
   # Determines where controls appear, "edges" or "bottom-right"
-  # controlsLayout: 'bottom-right'
+  # controlsLayout: bottom-right
 
   # Visibility rule for backwards navigation arrows; "faded", "hidden"
   # or "visible"
-  # controlsBackArrows: 'faded'
+  # controlsBackArrows: faded
 
   # Display a presentation progress bar
   progress: false
@@ -102,7 +112,7 @@ options:
   # rtl: false
 
   # See https://github.com/hakimel/reveal.js/#navigation-mode
-  navigationMode: 'linear' # default/linear/grid
+  navigationMode: linear # default/linear/grid
 
   # Randomizes the order of slides each time the presentation loads
   # shuffle: false
@@ -182,13 +192,13 @@ options:
   # previewLinks: false
 
   # Transition style
-  # transition: 'slide' # none/fade/slide/convex/concave/zoom
+  # transition: slide # none/fade/slide/convex/concave/zoom
 
   # Transition speed
-  # transitionSpeed: 'default' # default/fast/slow
+  # transitionSpeed: default # default/fast/slow
 
   # Transition style for full page slide backgrounds
-  # backgroundTransition: 'fade' # none/fade/slide/convex/concave/zoom
+  # backgroundTransition: fade # none/fade/slide/convex/concave/zoom
 
   # Number of slides away from the current that are visible
   # viewDistance: 3
@@ -199,7 +209,7 @@ options:
   # mobileViewDistance: 2
 
   # Parallax background image
-  # parallaxBackgroundImage: ''  # e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+  # parallaxBackgroundImage: ''  # e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
 
   # Parallax background size
   # parallaxBackgroundSize: ''  # CSS syntax, e.g. "2100px 900px"
