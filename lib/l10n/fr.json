@@ -19,6 +19,7 @@
   "No theme found in:": "Pas de thème trouvé dans:",
   "No user theme, using the default theme:": "Pas de thème utilisateur, utilisation du thème par défaut:",
   "Not a theme installed through NPM!": "Ce n'est pas un thème installé via NPM",
+  "Open presentation in your browser automatically": "Ouvre la presntation dans votre navigateur automatiquement",
   "Operations in progress: %1": "Opérations en cours: %1",
   "Output usage information.": "Affiche les informations d'utilisation.",
   "Preparing data...": "Préparation des données...",

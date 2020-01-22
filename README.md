@@ -99,6 +99,7 @@ Where:
 |:--------|:------|
 | --port, -p  | The port on where to serve the slide deck on the local machine. By default a random available port on the machine will be assigned |
 | --theme, -t | An explicite path to a custom theme folder. Default to `<sourceFolder>/theme` |
+| --browser, -b | Open your browser automatically |
 
 ## Customization
 
