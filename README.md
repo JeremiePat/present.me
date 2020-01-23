@@ -15,6 +15,12 @@ The easiest way to install **present.me** is to use `npm`
 $ npm i https://github.com/JeremiePat/present.me.git -g
 ```
 
+If you plan to create or use a theme made with Sass files, you'll need to install `sass` as a peer dependency:
+
+```bash
+$ npm i sass -g
+```
+
 ### With Docker
 
 _TBD_
@@ -111,6 +117,8 @@ By default, the `theme` folder is expected to be within your main folder alongsi
 $ pme make --theme=/my/theme/folder
 ```
 
+> **NOTE:** _When the `--theme` option is used, any theme folder within the content folder will be ignored._
+
 ### Configuration
 
 The YAML configuration file let you customize many aspect of the presentation. See [`theme/config.yaml`](theme/config.yaml) for the whole list of options and the exact syntaxe.
@@ -123,23 +131,51 @@ The `theme/config.yaml` represents the default config apply to all presentation.
 
 You can create your own style for your presentations by simply creating css stylesheets at the root of the `theme` folder.
 
-Any stylesheet within a subfolder won't be loaded, except is you import them within any of the top level stylesheet with the `@import` rule.
+Any stylesheet within a subfolder won't be loaded, except is you import them within any of the top level stylesheet with the `@import` rule. However, if you want to split your CSS into multiple files we encourage you to prefer using Sass (see below).
 
-For the PDF output, as we are using chromium under the hood, you can use the `@media print` rule to define a specific style for the PDF different than for the HTML:
+For the PDF output, you can use the `@media print` rule to define a specific style for the PDF different than for the HTML:
 
-```css
+```scss
 /* This will apply to both HTML and PDF output */
-@import url('styles/common.css');
+body { font-family: sans-serif; }
 
 /* This will apply to the HTML output (unless you try to print it) */
 @media screen {
-  @import url('styles/html.css');
+  body { font-size: 1rem; }
 }
 
 /* This will apply to the PDF output */
 @media print {
-  @import url('styles/pdf.css')
+  body { font-size: 12pt; }
 }
 ```
 
 > **NOTE:** _If you are creating relative links to ressources into your stylesheets, all those ressources must be into the theme folder. If you are creating absolute links, always assume that your root folder is your source folder containing your theme folder named `theme`, even if you specified your theme folder through the `--theme` option._
+
+#### Using Sass
+
+You can create your stylesheets using [Sass](https://sass-lang.com/). If so, **present.me** will compile your file automatically for you.
+
+> **NOTE:** _To be able to compile, Sass needs to be install as a peer dependency, see [Install] above._
+
+The main benefit is if you want to create [a custom reveal.js theme](https://github.com/hakimel/reveal.js/blob/master/css/theme/README.md), as the reveal.js `css/theme/template` folder is a predefine include path:
+
+```scss
+@import "mixins";
+@import "settings";
+
+$mainFont: sans-serif;
+$mainColor: #000;
+$headingFont: Impact, sans-serif;
+$headingColor: #900;
+$backgroundColor: #EFEFEF;
+
+// ...
+// See: https://github.com/hakimel/reveal.js/blob/master/css/theme/template/settings.scss
+
+@import "theme";
+```
+
+> **NOTE:** _If you create such a theme, remember to set the `theme` config entry to `null`_
+
+It is important to acknowledge that the resulting CSS file will be created within you theme directory with the extension `.css`. It will override any preexisting file, so be carful if you mix Sass and CSS files at the root of your theme folder.

@@ -35,5 +35,8 @@
     "reveal.js": "^3.8.0",
     "strip-ansi": "^6.0.0",
     "yaml": "^1.7.2"
+  },
+  "peerDependencies": {
+    "sass": "^1.25.0"
   }
 }
