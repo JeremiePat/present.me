@@ -72,7 +72,7 @@ This command will first create an HTML slide deck out of the markdown files avai
 #### pme make
 
 ```bash
-pme make [folder] [format] [...options]
+pme make [folder] [...options]
 ```
 
 Where:
@@ -82,7 +82,7 @@ Where:
 
 | Options  | Value |
 |:---------|:------|
-| --format, -f | The expected output format. Default to `html/slides` |
+| --format, -f | The expected output format. Default to `pdf/slides` |
 | --output, -o | An explicite path to the expected output file. Default to `<sourceFolder>/<folderName>.<formatExtension>` |
 | --theme, -t | An explicite path to a custom theme folder. Default to `<sourceFolder>/theme` |
 
@@ -154,11 +154,11 @@ body { font-family: sans-serif; }
 
 #### Using Sass
 
-You can create your stylesheets using [Sass](https://sass-lang.com/). If so, **present.me** will compile your file automatically for you.
+You can create your stylesheets using [Sass](https://sass-lang.com/). If so, **present.me** will compile your files automatically for you.
 
-> **NOTE:** _To be able to compile, Sass needs to be install as a peer dependency, see [Install] above._
+> **NOTE:** _To be able to compile, Sass needs to be installed as a peer dependency, see [Install](#install) above._
 
-The main benefit is if you want to create [a custom reveal.js theme](https://github.com/hakimel/reveal.js/blob/master/css/theme/README.md), as the reveal.js `css/theme/template` folder is a predefine include path:
+The main benefit is if you want to create [a custom reveal.js theme](https://github.com/hakimel/reveal.js/blob/master/css/theme/README.md), as the reveal.js `css/theme/template` folder is a predefined include path:
 
 ```scss
 @import "mixins";
