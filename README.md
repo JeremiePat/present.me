@@ -127,6 +127,20 @@ This include all the [reveal.js options](https://github.com/hakimel/reveal.js#co
 
 The `theme/config.yaml` represents the default config apply to all presentation. Your own config file can be lighter as it will overwrite only what you set.
 
+#### Metadata
+
+Beyond theme configuration, there are a few presentation metadata that can be specified outside the theme folder. Any YAML file within the same folder of the markdown file will always override the following theme metadata:
+
+- `title` The title of the presentation
+- `description` The description of the presentation
+- `date` The date of creation/update of the presentation
+- `lang` The language of the presentation
+- `authors` The list of authors who contributed to the presentation (If there is only one author, it doesn't have to be a list)
+
+It's a convenient way for users to set those data while using a third party theme.
+
+> **NOTE:** _Theme creators are discourage to set those metadata within their configuration file, whilst users are encourage to create a `metadata.yml` file alongside their markdown files._
+
 ### Styling
 
 You can create your own style for your presentations by simply creating css stylesheets at the root of the `theme` folder.
