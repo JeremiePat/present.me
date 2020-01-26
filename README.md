@@ -85,10 +85,17 @@ Where:
 | --format, -f | The expected output format. Default to `pdf/slides` |
 | --output, -o | An explicite path to the expected output file. Default to `<sourceFolder>/<folderName>.<formatExtension>` |
 | --theme, -t | An explicite path to a custom theme folder. Default to `<sourceFolder>/theme` |
+| --pack, -p | Put the output file (and its dependencies) into a compressed archive. Default to `zip` |
 
-Currently supported format:
+Currently supported output format:
  - `html/slides` Slide deck in HTML using [reveal.js](https://revealjs.com)
  - `pdf/slides` Slide deck in PDF format
+
+Currently supported compression format
+ - `zip` Produce a ZIP file
+ - `tar` Produce a TAR file (compressed with GZip)
+
+> **NOTE:**
 
 #### pme serve
 
