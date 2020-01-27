@@ -35,6 +35,7 @@
   "Theme found in the file system:": "Thème trouvé dans le système de fichier:",
   "Turn a folder of Markdown files into a slidedeck": "Transforme un dossier de fichiers Markdown en une presentation autonome.",
   "Unable to compile Sass files": "Impossible de compiler les fichiers Sass",
+  "Unknown pack format: %1": "Format de compression inconnu: %1",
   "Using the default theme:": "Utilisation du thème par defaut:",
   "You need to install Sass to compile your theme Sass files": "Vous devez installer Sass pour compiler les fichier Sass de votre thème",
 
