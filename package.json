@@ -8,9 +8,7 @@
   },
   "scripts": {
     "test": "npm run lint && jest",
-    "lint": "eslint ./lib ./tpl/filters",
-    "make": "node ./index.js make",
-    "serve": "node ./index.js serve"
+    "lint": "eslint ./lib ./tpl/filters"
   },
   "author": "Jérémie Patonnier <jeremie.patonnier@gmail.com>",
   "license": "ISC",
@@ -21,6 +19,7 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.1",
     "jest": "^25.1.0"
   },
   "dependencies": {
@@ -39,5 +38,11 @@
   },
   "peerDependencies": {
     "sass": "^1.25.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
   }
 }
