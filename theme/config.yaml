@@ -1,16 +1,10 @@
 # -----------------------------------------------------------------------------
 # GLOBAL METADATA
 # -----------------------------------------------------------------------------
-# YOU SHOULD REALLY CUSTOMIZE THOSE METADATA!
+# THOSE VALUES ARE JUST FALLBACK IF USERS FORGET TO SET THOSE METADATA
 
-# The main title of your presentation
+# The main title of the document
 title: A nice presentation made with present.me
-
-# The language of your presentation
-# see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
-# Note that if your language is writen from right to left,
-# you should also set the reveal.js rtl option below.
-lang: en
 
 # The description of your presentation (if any)
 description: null
@@ -18,6 +12,15 @@ description: null
 # The list of authors for your presentation.
 # It can be either a name or a list of names
 authors: null
+
+# The date the document has been created/updated
+date: null
+
+# The language of the document
+# see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
+# Note that if the theme intent to be for right-to-left languages
+# you should set the reveal.js rtl option below.
+lang: en
 
 
 # -----------------------------------------------------------------------------
@@ -38,8 +41,7 @@ theme: simple # black/white/league/beige/sky/night/serif/simple/solarized
 highlight: monokai # monokai/zenburn
 
 # reveal.js markdown separator rules for markdown files with multiple slides
-# inside.
-# Those value will be used to fill the `data-separator`,
+# inside. Those value will be used to fill the `data-separator`,
 # `data-separator-vertical` and `data-separator-notes` attributes.
 # see: https://github.com/hakimel/reveal.js#external-markdown
 markdown:
@@ -48,174 +50,33 @@ markdown:
   notes: '^notes?:' # to fill data-separator-notes
 
 # reveal.js configuration
-# see: https://github.com/hakimel/reveal.js#configuration for details
-# This is our own default overload
+# This is our own default overload, for the full list of options and their
+# default values, see: https://github.com/hakimel/reveal.js#configuration
 options:
-  # The display mode that will be used to show slides
-  # display: block
-
-  # The "normal" size of the presentation, aspect ratio will be preserved
-  # when the presentation is scaled to fit different resolutions.
+  # We default the presentation size to a HD 720p format
   width: 1280
   height: 720
 
-  # Factor of the display size that should remain empty around the content
-  # margin: 0.1
-
-  # Bounds for smallest/largest possible scale to apply to content
-  # minScale: 0.2
-  # maxScale: 1.5
-
-  # Display presentation control arrows
+  # We do not display presentation control arrows
   controls: false
 
-  # Help the user learn the controls by providing hints, for example by
-  # bouncing the down arrow when they first encounter a vertical slide
-  # controlsTutorial: true
-
-  # Determines where controls appear, "edges" or "bottom-right"
-  # controlsLayout: bottom-right
-
-  # Visibility rule for backwards navigation arrows; "faded", "hidden"
-  # or "visible"
-  # controlsBackArrows: faded
-
-  # Display a presentation progress bar
+  # We do not display the presentation progress bar
   progress: false
 
-  # Display the page number of the current slide
+  # We display the page number of the current slide
   slideNumber: true
 
   # Add the current slide number to the URL hash so that reloading the
-  # page/copying the URL will return you to the same slide
+  # page/copying the URL will return us to the same slide
   hash: true
 
-  # Push each slide change to the browser history. Implies `hash: true`
-  # history: false
-
-  # Enable keyboard shortcuts for navigation
-  # keyboard: true
-
-  # Enable the slide overview mode
-  # overview: true
-
-  # Vertical centering of slides
-  # center: true
-
-  # Enables touch navigation on devices with touch input
-  # touch: true
-
-  # Loop the presentation
-  # loop: false
-
-  # Change the presentation direction to be RTL
-  # rtl: false
+  # By default we assume the presentation will be in ltr mode
+  # Users needing a rtl theme are encourage to create one or
+  # to use an existing one
+  rtl: false
 
   # See https://github.com/hakimel/reveal.js/#navigation-mode
   navigationMode: linear # default/linear/grid
 
-  # Randomizes the order of slides each time the presentation loads
-  # shuffle: false
-
-  # Turns fragments on and off globally
-  # fragments: true
-
-  # Flags whether to include the current fragment in the URL,
-  # so that reloading brings you to the same fragment position
-  # fragmentInURL: false
-
-  # Flags if the presentation is running in an embedded mode,
-  # i.e. contained within a limited portion of the screen
-  # embedded: false
-
-  # Flags if we should show a help overlay when the questionmark
-  # key is pressed
-  # help: true
-
-  # Flags if speaker notes should be visible to all viewers
-  # showNotes: false
-
-  # Global override for autoplaying embedded media (video/audio/iframe)
-  # - null: Media will only autoplay if data-autoplay is present
-  # - true: All media will autoplay, regardless of individual setting
-  # - false: No media will autoplay, regardless of individual setting
-  # autoPlayMedia: null
-
   # Global override for preloading lazy-loaded iframes
-  # - null: Iframes with data-src AND data-preload will be loaded when within
-  #   the viewDistance, iframes with only data-src will be loaded when visible
-  # - true: All iframes with data-src will be loaded when within the viewDistance
-  # - false: All iframes with data-src will be loaded only when visible
   preloadIframes: true
-
-  # Number of milliseconds between automatically proceeding to the
-  # next slide, disabled when set to 0.
-  # autoSlide: 0
-
-  # Stop auto-sliding after user input
-  # autoSlideStoppable: true
-
-  # Use this method for navigation when auto-sliding
-  # autoSlideMethod: Reveal.navigateNext
-
-  # Specify the average time in seconds that you think you will spend
-  # presenting each slide. This is used to show a pacing timer in the
-  # speaker view
-  # defaultTiming: 120
-
-  # Specify the total time in seconds that is available to
-  # present.  If this is set to a nonzero value, the pacing
-  # timer will work out the time available for each slide,
-  # instead of using the defaultTiming value
-  # totalTime: 0
-
-  # Specify the minimum amount of time you want to allot to
-  # each slide, if using the totalTime calculation method.  If
-  # the automated time allocation causes slide pacing to fall
-  # below this threshold, then you will see an alert in the
-  # speaker notes window
-  # minimumTimePerSlide: 0
-
-  # Enable slide navigation via mouse wheel
-  # mouseWheel: false
-
-  # Hide cursor if inactive
-  # hideInactiveCursor: true
-
-  # Time before the cursor is hidden (in ms)
-  # hideCursorTime: 5000
-
-  # Hides the address bar on mobile devices
-  # hideAddressBar: true
-
-  # Opens links in an iframe preview overlay
-  # previewLinks: false
-
-  # Transition style
-  # transition: slide # none/fade/slide/convex/concave/zoom
-
-  # Transition speed
-  # transitionSpeed: default # default/fast/slow
-
-  # Transition style for full page slide backgrounds
-  # backgroundTransition: fade # none/fade/slide/convex/concave/zoom
-
-  # Number of slides away from the current that are visible
-  # viewDistance: 3
-
-  # Number of slides away from the current that are visible on mobile
-  # devices. It is advisable to set this to a lower number than
-  # viewDistance in order to save resources.
-  # mobileViewDistance: 2
-
-  # Parallax background image
-  # parallaxBackgroundImage: ''  # e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
-
-  # Parallax background size
-  # parallaxBackgroundSize: ''  # CSS syntax, e.g. "2100px 900px"
-
-  # Number of pixels to move the parallax background per slide
-  # - Calculated automatically unless specified
-  # - Set to 0 to disable movement along an axis
-  # parallaxBackgroundHorizontal: null
-  # parallaxBackgroundVertical: null

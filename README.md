@@ -128,7 +128,7 @@ $ pme make --theme=/my/theme/folder
 
 ### Configuration
 
-The YAML configuration file let you customize many aspect of the presentation. See [`theme/config.yaml`](theme/config.yaml) for the whole list of options and the exact syntaxe.
+Your them can contain a YAML configuration file to customize many aspect of the presentation. See [`theme/config.yaml`](theme/config.yaml) for the whole list of options and the exact syntaxe.
 
 This include all the [reveal.js options](https://github.com/hakimel/reveal.js#configuration), the size of the document, the theme to apply, etc.
 
@@ -136,7 +136,7 @@ The `theme/config.yaml` represents the default config apply to all presentation.
 
 #### Metadata
 
-Beyond theme configuration, there are a few presentation metadata that can be specified outside the theme folder. Any YAML file within the same folder of the markdown file will always override the following theme metadata:
+Beyond theme configuration, there are a few presentation metadata that can be specified outside the theme folder. Any YAML file within the same folder of the markdown file will always override the following metadata:
 
 - `title` The title of the presentation
 - `description` The description of the presentation
@@ -150,7 +150,7 @@ It's a convenient way for users to set those data while using a third party them
 
 ### Styling
 
-You can create your own style for your presentations by simply creating css stylesheets at the root of the `theme` folder.
+You can create your own style for your presentations by simply adding css stylesheets at the root of the `theme` folder.
 
 Any stylesheet within a subfolder won't be loaded, except is you import them within any of the top level stylesheet with the `@import` rule. However, if you want to split your CSS into multiple files we encourage you to prefer using Sass (see below).
 
@@ -199,4 +199,4 @@ $backgroundColor: #EFEFEF;
 
 > **NOTE:** _If you create such a theme, remember to set the `theme` config entry to `null`_
 
-It is important to acknowledge that the resulting CSS file will be created within you theme directory with the extension `.css`. It will override any preexisting file, so be carful if you mix Sass and CSS files at the root of your theme folder.
+It is important to acknowledge that the resulting CSS file will be created within you theme directory with the extension `.css`. It will override any preexisting file, so **be carful if you mix Sass and CSS files** at the root of your theme folder.
