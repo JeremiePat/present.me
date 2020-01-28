@@ -1,7 +1,9 @@
 {
   "name": "present.me",
-  "version": "0.0.0",
-  "description": "Present.ME is a convinient tool to present anything",
+  "version": "0.1.0",
+  "description": "Present.ME is a convenient tool to present anything",
+  "author": "Jérémie Patonnier <jeremie.patonnier@gmail.com>",
+  "license": "BSD-3-Clause",
   "main": "index.js",
   "bin": {
     "pme": "./index.js"
@@ -10,8 +12,6 @@
     "test": "npm run lint && jest",
     "lint": "eslint ./lib ./tpl/filters"
   },
-  "author": "Jérémie Patonnier <jeremie.patonnier@gmail.com>",
-  "license": "ISC",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
