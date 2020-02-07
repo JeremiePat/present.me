@@ -1,24 +1,18 @@
-# present.me
+# StuffME
 
-**present.me** is a convenient tool to present your stuff.
+**StuffME** is a convenient tool to present your stuff.
 
-Basically, it turns a folder full of markdown files into a slide deck ready to use.
+Basically, it turns a folder full of markdown files into a slide deck ready to use and handle all the mess around it.
 
 
 ## Install
 
 ### With NPM
 
-The easiest way to install **present.me** is to use `npm`
+The easiest way to install **StuffME** is to use `npm`
 
 ```bash
-$ npm i https://github.com/JeremiePat/present.me.git -g
-```
-
-If you plan to create or use a theme made with Sass files, you'll need to install `sass` as a peer dependency:
-
-```bash
-$ npm i sass -g
+$ npm i https://github.com/JeremiePat/stuffme.git -g
 ```
 
 ### With Docker
@@ -27,14 +21,14 @@ _TBD_
 
 ## Usage
 
-Once installed you'll get access to a cli command: `pme` to create your presentations.
+Once installed you'll get access to a cli command: `stuff` to create your presentations.
 
 The source of any presentation is a folder containing markdown files.
 
 ### Creating a presentation
 
 ```bash
-$ pme make my/folder -format html/slides --output my/folder/slidedeck.html
+$ stuff make my/folder -format html/slides --output my/folder/slidedeck.html
 ```
 
 the previous command will get all the markdown files out of the `my/folder` repository and will turn them into an HTML slide deck in the file `my/folder/slidedeck.html`.
@@ -42,7 +36,7 @@ the previous command will get all the markdown files out of the `my/folder` repo
 The `--output` option isn't required and if it's omitted, the default name will be the name of the folder with the appropriate extension. For example:
 
 ```bash
-$ pme make my/folder
+$ stuff make my/folder
 ```
 
 will create an HTML slide deck in the file `my/folder/folder.html`
@@ -50,7 +44,7 @@ will create an HTML slide deck in the file `my/folder/folder.html`
 The `--format` option indicates the output format. For example:
 
 ```bash
-$ pme make my/folder --format pdf/slides
+$ stuff make my/folder --format pdf/slides
 ```
 
 This will produce a PDF document where each page will be one slide.
@@ -62,17 +56,17 @@ We currently support only two format: `html/slides` and `pdf/slides` but there a
 As a convenient tool, HTML slide decks can be served locally in order to display them nicely into your browser.
 
 ```bash
-$ pme serve my/folder --port=8000
+$ stuff serve my/folder --port=8000
 ```
 
 This command will first create an HTML slide deck out of the markdown files available in `my/folder` and then launch a local web server accessible at the address: `http://localhost:8000`
 
 ### CLI API
 
-#### pme make
+#### stuff make
 
 ```bash
-pme make [folder] [...options]
+stuff make [folder] [...options]
 ```
 
 Where:
@@ -95,12 +89,10 @@ Currently supported compression format
  - `zip` Produce a ZIP file
  - `tar` Produce a TAR file (compressed with GZip)
 
-> **NOTE:**
-
-#### pme serve
+#### stuff serve
 
 ```bash
-pme serve [folder] [...options]
+stuff serve [folder] [...options]
 ```
 
 Where:
@@ -121,7 +113,7 @@ Presentations can be customized to fit your needs. To do that you can create a `
 By default, the `theme` folder is expected to be within your main folder alongside your markdown files. However, you can use an external theme folder by using the `--theme` option:
 
 ```bash
-$ pme make --theme=/my/theme/folder
+$ stuff make --theme=/my/theme/folder
 ```
 
 > **NOTE:** _When the `--theme` option is used, any theme folder within the content folder will be ignored._
