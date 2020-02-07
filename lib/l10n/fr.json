@@ -17,14 +17,14 @@
   "Found a local theme:" : "Thème local trouvé:",
   "Generating HTML sildes...": "Creation d'une présentation HTML...",
   "Generating PDF sildes...": "Creation d'une présentation PDF...",
-  "Launch headless browser": "Demarrage du navigateur headless",
+  "Launch headless browser": "Démarrage du navigateur headless",
   "Let the program telling about what it is doing": "Affiche des informations sur ce que le programme est en train de faire.",
   "Not a theme installed through NPM!": "Ce n'est pas un thème installé via NPM",
   "Open presentation in your browser automatically": "Ouvre la présentation dans votre navigateur automatiquement",
   "Operations in progress: %1": "Opérations en cours: %1",
   "Output usage information": "Affiche les informations d'utilisation.",
   "Produce a compressed archive containing the whole presentation": "Produit une archive compressée contenant la présentation",
-  "Provide helpful debug information in the terminal": "Affiche des information pratique de debug dans le terminal.",
+  "Provide helpful debug information in the terminal": "Affiche des informations pratiques de debug dans le terminal.",
   "Rendering Nunjucks template:": "Rendu du template Nunjucks:",
   "Retrieving theme folder": "Récuperation du répertoire de thème",
   "Serve a folder of Markdown files as a web slidedeck": "Sert un dossier de fichiers Markdown sous la forme d'une presentation web.",
@@ -37,7 +37,7 @@
   "Unable to compile Sass files": "Impossible de compiler les fichiers Sass",
   "Unknown pack format: %1": "Format de compression inconnu: %1",
   "Using the default theme:": "Utilisation du thème par defaut:",
-  "You need to install Sass to compile your theme Sass files": "Vous devez installer Sass pour compiler les fichier Sass de votre thème",
+  "You need to install Sass to compile your theme Sass files": "Vous devez installer Sass pour compiler les fichiers Sass de votre thème",
 
   "OUTPUT: %1": "SORTIE:  %1"
 }
