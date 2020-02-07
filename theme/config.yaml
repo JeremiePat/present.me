@@ -44,10 +44,12 @@ highlight: monokai # monokai/zenburn
 # inside. Those value will be used to fill the `data-separator`,
 # `data-separator-vertical` and `data-separator-notes` attributes.
 # see: https://github.com/hakimel/reveal.js#external-markdown
+# a falsy value will prevent the attribute to be set, so the default
+# reveal.js behavior will be applied.
 markdown:
-  separator: '^\r?\n---\r?\n$' # to fill data-markdown-separator
-  vertical: false # to fill data-separator-vertical
-  notes: '^notes?:' # to fill data-separator-notes
+  separator: false # to fill data-separator # default to '^\r?\n---\r?\n$'
+  vertical: false # to fill data-separator-vertical # default to no vertical spliting
+  notes: false # to fill data-separator-notes # default to '^notes?:'
 
 # reveal.js configuration
 # This is our own default overload, for the full list of options and their
