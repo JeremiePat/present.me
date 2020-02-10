@@ -1,5 +1,5 @@
 {
   "name": "my-theme",
-  "author": "me me me",
+  "author": { "name": "me me me" },
   "description": "This is awesome"
 }
