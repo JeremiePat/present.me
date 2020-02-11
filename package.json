@@ -1,6 +1,6 @@
 {
   "name": "stuffme",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "StuffME is a convenient tool to present your stuff",
   "author": "Jérémie Patonnier <jeremie.patonnier@gmail.com>",
   "license": "BSD-3-Clause",
@@ -32,7 +32,7 @@
     "nunjucks": "^3.2.0",
     "open": "^7.0.0",
     "puppeteer": "^2.0.0",
-    "reveal.js": "^3.8.0",
+    "reveal.js": "^3.9.2",
     "strip-ansi": "^6.0.0",
     "yaml": "^1.7.2"
   },
