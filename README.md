@@ -1,6 +1,6 @@
-# StuffME
+# StuffMe
 
-**StuffME** is a convenient tool to present your stuff.
+**StuffMe** is a convenient tool to present your stuff.
 
 Basically, it turns a folder full of markdown files into a slide deck ready to use and handle all the mess around it.
 
@@ -9,7 +9,7 @@ Basically, it turns a folder full of markdown files into a slide deck ready to u
 
 ### With NPM
 
-The easiest way to install **StuffME** is to use `npm`
+The easiest way to install **StuffMe** is to use `npm`
 
 ```bash
 $ npm i https://github.com/JeremiePat/stuffme.git -g
@@ -28,18 +28,12 @@ The source of any presentation is a folder containing markdown files.
 ### Creating a presentation
 
 ```bash
-$ stuff make my/folder -format html/slides --output my/folder/slidedeck.html
+$ stuff make my/folder --format html/slides --output my/folder/slidedeck.html
 ```
 
 the previous command will get all the markdown files out of the `my/folder` repository and will turn them into an HTML slide deck in the file `my/folder/slidedeck.html`.
 
-The `--output` option isn't required and if it's omitted, the default name will be the name of the folder with the appropriate extension. For example:
-
-```bash
-$ stuff make my/folder
-```
-
-will create an HTML slide deck in the file `my/folder/folder.html`
+The `--output` option isn't required and if it's omitted, the default name will be the name of the folder with the appropriate extension. For example, `stuff make my/folder` will create an HTML slide deck in the file `my/folder/folder.html`
 
 The `--format` option indicates the output format. For example:
 
@@ -61,9 +55,9 @@ $ stuff serve my/folder --port=8000
 
 This command will first create an HTML slide deck out of the markdown files available in `my/folder` and then launch a local web server accessible at the address: `http://localhost:8000`
 
-### CLI API
+## CLI API
 
-#### stuff make
+### `stuff make`
 
 ```bash
 stuff make [folder] [...options]
@@ -89,7 +83,7 @@ Currently supported compression format
  - `zip` Produce a ZIP file
  - `tar` Produce a TAR file (compressed with GZip)
 
-#### stuff serve
+### `stuff serve`
 
 ```bash
 stuff serve [folder] [...options]
@@ -167,9 +161,9 @@ body { font-family: sans-serif; }
 
 #### Using Sass
 
-You can create your stylesheets using [Sass](https://sass-lang.com/). If so, **present.me** will compile your files automatically for you.
+You can create your stylesheets using [Sass](https://sass-lang.com/). If so, **StuffMe** will compile your files automatically for you.
 
-> **NOTE:** _To be able to compile, Sass needs to be installed as a peer dependency, see [Install](#install) above._
+> **NOTE:** _To be able to compile, Sass needs to be a dependency of the theme installed. Even if we strongly advise to use the [sass](https://www.npmjs.com/package/sass) module to benefit from the latest Sass features, we also support the [node-sass](https://www.npmjs.com/package/node-sass) module._
 
 The main benefit is if you want to create [a custom reveal.js theme](https://github.com/hakimel/reveal.js/blob/master/css/theme/README.md), as the reveal.js `css/theme/template` folder is a predefined include path:
 
